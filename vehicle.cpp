@@ -1,7 +1,7 @@
 #include <iostream>
 #include "vehicle.h"
 
-Vehicle::Vehicle() : maneuver(0), maxSpeed(0), name("")
+Vehicle::Vehicle() : maneuver(0), maxSpeed(0), name(""), skill("")
 {
 
 }
@@ -32,6 +32,7 @@ Json::Value& Vehicle::toJson()
     (*root)["name"] = name;
     (*root)["maxSpeed"] = maxSpeed;
     (*root)["maneuver"] = maneuver;
+    (*root)["skill"] = skill;
 
     return *root;
 }
@@ -41,9 +42,25 @@ void Vehicle::fromJson(Json::Value &parent)
     maxSpeed = parent["maxSpeed"].asInt();
     maneuver = parent["maneuver"].asInt();
     name = parent["name"].asString();
+    skill = parent["skill"].asString();
 }
 
 string Vehicle::getName()
 {
     return name;
+}
+
+void Vehicle::setName(string name)
+{
+    this->name = name;
+}
+
+string Vehicle::getSkill()
+{
+    return skill;
+}
+
+void Vehicle::setSkill(string skill)
+{
+    this->skill = skill;
 }

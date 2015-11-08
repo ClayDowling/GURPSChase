@@ -10,7 +10,7 @@ public:
     Vehicle vehicle;
 
     void SetUp() {
-        istringstream in("{\"maxSpeed\": 35, \"maneuver\": 5, \"name\": \"Test Vehicle\" }");
+        istringstream in("{\"maxSpeed\": 35, \"maneuver\": 5, \"name\": \"Test Vehicle\", \"skill\": \"Driving\" }");
 
         Json::Value root;
         in >> root;
@@ -54,6 +54,18 @@ TEST_F(VehicleBasicSetup, CanWriteName)
     ASSERT_EQ("Test Vehicle", output["name"].asString());
 }
 
+TEST_F(VehicleBasicSetup, nameDefaultsToBlank)
+{
+    Vehicle localvehicle;
+    ASSERT_EQ("", localvehicle.getName());
+}
+
+TEST_F(VehicleBasicSetup, setName_withSerenity_getNameReturnsSerenity)
+{
+    vehicle.setName("Serenity");
+    ASSERT_EQ("Serenity", vehicle.getName());
+}
+
 TEST_F(VehicleBasicSetup, CanSetMaxSpeed)
 {
     vehicle.setMaxSpeed(27);
@@ -78,8 +90,25 @@ TEST_F(VehicleBasicSetup, maxSpeedDefaultsToZero)
     ASSERT_EQ(0, localvehicle.getMaxSpeed());
 }
 
-TEST_F(VehicleBasicSetup, nameDefaultsToBlank)
+TEST_F(VehicleBasicSetup, SkillDefaultsToBlank)
 {
     Vehicle localvehicle;
-    ASSERT_EQ("", localvehicle.getName());
+    ASSERT_EQ("", localvehicle.getSkill());
+}
+
+TEST_F(VehicleBasicSetup, setSkill_whenFlying_getSkillReturnsFlying)
+{
+    vehicle.setSkill("Flying");
+    ASSERT_EQ("Flying", vehicle.getSkill());
+}
+
+TEST_F(VehicleBasicSetup, CanReadSkill)
+{
+    ASSERT_EQ("Driving", vehicle.getSkill())   ;
+}
+
+TEST_F(VehicleBasicSetup, CanWriteSkill)
+{
+    Json::Value output = vehicle.toJson();
+    ASSERT_EQ("Driving", output["skill"].asString());
 }

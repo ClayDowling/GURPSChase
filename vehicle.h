@@ -21,11 +21,16 @@ public:
     virtual void setManeuver(int);
 
     virtual string getName();
+    virtual void setName(string name);
+
+    virtual string getSkill();
+    virtual void setSkill(string skill);
 
 private:
     int maxSpeed;
     int maneuver;
     string name;
+    string skill;
 };
 
 #endif // VEHICLE_H
