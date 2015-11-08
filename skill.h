@@ -14,10 +14,14 @@ public:
     virtual void fromJson(Json::Value &parent);
     virtual Json::Value& toJson();
 
-    string getName();
+    virtual string getName();
+    virtual void setName(string);
+    virtual int getLevel();
+    virtual void setLevel(int level);
 
 private:
     string name;
+    int level;
 };
 
 #endif // SKILL_H
