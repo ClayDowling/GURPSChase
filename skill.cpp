@@ -15,6 +15,7 @@ Json::Value& Skill::toJson()
 {
     Json::Value *root = new Json::Value();
     (*root)["name"] = name;
+    (*root)["level"] = level;
     return *root;
 }
 

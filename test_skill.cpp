@@ -51,6 +51,12 @@ TEST_F(BasicSkillTest, CanReadLevel)
     ASSERT_EQ(12, skill.getLevel());
 }
 
+TEST_F(BasicSkillTest, CanWriteLevel)
+{
+    Json::Value output = skill.toJson();
+    ASSERT_EQ(12, output["level"].asInt());
+}
+
 TEST_F(BasicSkillTest, CanSetLevel)
 {
     skill.setLevel(22);

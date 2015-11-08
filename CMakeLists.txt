@@ -24,6 +24,8 @@ configure_file (
 INCLUDE_DIRECTORIES("${PROJECT_BINARY_DIR}")
 
 set(APP_SOURCE
+        driver.cpp
+        driver.h
 	jsoncpp.cpp
         serializable.h
         skill.cpp
@@ -33,8 +35,9 @@ set(APP_SOURCE
 	)
 
 set(TEST_SOURCE
-    test_vehicle.cpp
+    test_driver.cpp
     test_skill.cpp
+    test_vehicle.cpp
     )
 
 add_executable(${PROJECT_NAME}
