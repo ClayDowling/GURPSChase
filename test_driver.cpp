@@ -9,7 +9,7 @@ public:
 
     virtual void SetUp()
     {
-        istringstream in("{\"name\": \"Speed Racer\", \"skills\": [{\"name\": \"Driving\", \"level\": 12}, {\"name\": \"Flying\", \"level\": 14}]}");
+        istringstream in("{\"name\": \"Speed Racer\", \"DX\": 12, \"skills\": [{\"name\": \"Driving\", \"level\": 12}, {\"name\": \"Flying\", \"level\": 14}]}");
         Json::Value root;
 
         in >> root;
@@ -87,4 +87,27 @@ TEST_F(BasicDriverTest, CanWriteSkills)
     ASSERT_EQ("Driving", skill1["name"].asString());
     ASSERT_EQ("Flying", skill2["name"].asString());
 
+}
+
+TEST_F(BasicDriverTest, DxDefaultsToZero)
+{
+    Driver localDriver;
+    ASSERT_EQ(0, localDriver.getDX());
+}
+
+TEST_F(BasicDriverTest, CanSetDX)
+{
+    driver.setDX(14);
+    ASSERT_EQ(14, driver.getDX());
+}
+
+TEST_F(BasicDriverTest, CanReadDX)
+{
+    ASSERT_EQ(12, driver.getDX());
+}
+
+TEST_F(BasicDriverTest, CanWriteDX)
+{
+    Json::Value output = driver.toJson();
+    ASSERT_EQ(12, output["DX"].asInt());
 }

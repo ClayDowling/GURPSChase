@@ -19,12 +19,16 @@ public:
     virtual string getName();
     virtual void setName(string name);
 
+    virtual int getDX();
+    virtual void setDX(int dx);
+
     virtual int skillCount();
     virtual Skill& getSkill(int index);
     virtual int getSkillLevel(string name);
 
 private:
     string name;
+    int dx;
     vector<Skill> skills;
 };
 

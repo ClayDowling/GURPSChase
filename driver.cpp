@@ -4,7 +4,7 @@
 
 using namespace std;
 
-Driver::Driver() : name("")
+Driver::Driver() : name(""), dx(0)
 {
 
 }
@@ -22,6 +22,7 @@ void Driver::setName(string name)
 void Driver::fromJson(Json::Value &parent)
 {
     name = parent["name"].asString();
+    dx = parent["DX"].asInt();
     Json::Value arrskill = parent["skills"];
     for(int i=0; i < arrskill.size(); ++i) {
         Skill newSkill;
@@ -35,7 +36,7 @@ Json::Value& Driver::toJson()
 {
     Json::Value *root = new Json::Value();
     (*root)["name"] = name;
-    Json::Value skillsarray;
+    (*root)["DX"] = dx;
 
     for(auto skill : skills) {
         (*root)["skills"].append(skill.toJson());
@@ -65,4 +66,14 @@ int Driver::getSkillLevel(string name)
         }
     }
     return -1;
+}
+
+int Driver::getDX()
+{
+    return dx;
+}
+
+void Driver::setDX(int dx)
+{
+    this->dx = dx;
 }
