@@ -1,7 +1,10 @@
 #ifndef VEHICLE_H
 #define VEHICLE_H
 
+#include <string>
 #include "serializable.h"
+
+using namespace std;
 
 class Vehicle : public Serializable
 {
@@ -17,9 +20,12 @@ public:
     virtual int getManeuver();
     virtual void setManeuver(int);
 
+    virtual string getName();
+
 private:
     int maxSpeed;
     int maneuver;
+    string name;
 };
 
 #endif // VEHICLE_H

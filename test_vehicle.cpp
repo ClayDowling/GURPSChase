@@ -10,7 +10,7 @@ public:
     Vehicle vehicle;
 
     void SetUp() {
-        istringstream in("{\"maxSpeed\": 35, \"maneuver\": 5 }");
+        istringstream in("{\"maxSpeed\": 35, \"maneuver\": 5, \"name\": \"Test Vehicle\" }");
 
         Json::Value root;
         in >> root;
@@ -43,6 +43,17 @@ TEST_F(VehicleBasicSetup, CanWriteManeuver)
     ASSERT_EQ(5, output["maneuver"].asInt());
 }
 
+TEST_F(VehicleBasicSetup, CanReadName)
+{
+    ASSERT_EQ("Test Vehicle", vehicle.getName());
+}
+
+TEST_F(VehicleBasicSetup, CanWriteName)
+{
+    Json::Value output = vehicle.toJson();
+    ASSERT_EQ("Test Vehicle", output["name"].asString());
+}
+
 TEST_F(VehicleBasicSetup, CanSetMaxSpeed)
 {
     vehicle.setMaxSpeed(27);
@@ -65,4 +76,10 @@ TEST_F(VehicleBasicSetup, maxSpeedDefaultsToZero)
 {
     Vehicle localvehicle;
     ASSERT_EQ(0, localvehicle.getMaxSpeed());
+}
+
+TEST_F(VehicleBasicSetup, nameDefaultsToBlank)
+{
+    Vehicle localvehicle;
+    ASSERT_EQ("", localvehicle.getName());
 }
