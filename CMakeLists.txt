@@ -25,13 +25,16 @@ INCLUDE_DIRECTORIES("${PROJECT_BINARY_DIR}")
 
 set(APP_SOURCE
 	jsoncpp.cpp
+        serializable.h
+        skill.cpp
+        skill.h
         vehicle.cpp
         vehicle.h
-        serializable.h
 	)
 
 set(TEST_SOURCE
     test_vehicle.cpp
+    test_skill.cpp
     )
 
 add_executable(${PROJECT_NAME}
