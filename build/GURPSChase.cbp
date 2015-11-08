@@ -1,0 +1,393 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+   <FileVersion major="1" minor="6" />
+   <Project>
+      <Option title="GURPSChase" />
+      <Option makefile_is_custom="1" />
+      <Option compiler="gcc" />
+      <Option virtualFolders="CMake Files\;CMake Files\..\;CMake Files\..\..\;CMake Files\..\..\..\;CMake Files\..\..\..\..\;CMake Files\..\..\..\..\usr\;CMake Files\..\..\..\..\usr\lib\;CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\;CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\;CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5Widgets\;CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5Gui\;CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5Core\;CMake Files\gtest\;CMake Files\gtest\cmake\;" />
+      <Build>
+      <Target title="all">
+         <Option working_dir="/home/clay/workspace/GURPSChase/build" />
+         <Option type="4" />
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/clay/workspace/GURPSChase/build/Makefile&quot;  VERBOSE=1 all" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/clay/workspace/GURPSChase/build/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/clay/workspace/GURPSChase/build/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/clay/workspace/GURPSChase/build/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="rebuild_cache">
+         <Option working_dir="/home/clay/workspace/GURPSChase/build" />
+         <Option type="4" />
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/clay/workspace/GURPSChase/build/Makefile&quot;  VERBOSE=1 rebuild_cache" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/clay/workspace/GURPSChase/build/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/clay/workspace/GURPSChase/build/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/clay/workspace/GURPSChase/build/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="GURPSChase_automoc">
+         <Option working_dir="/home/clay/workspace/GURPSChase/build" />
+         <Option type="4" />
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/clay/workspace/GURPSChase/build/Makefile&quot;  VERBOSE=1 GURPSChase_automoc" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/clay/workspace/GURPSChase/build/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/clay/workspace/GURPSChase/build/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/clay/workspace/GURPSChase/build/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="GURPSChase-test_automoc">
+         <Option working_dir="/home/clay/workspace/GURPSChase/build" />
+         <Option type="4" />
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/clay/workspace/GURPSChase/build/Makefile&quot;  VERBOSE=1 GURPSChase-test_automoc" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/clay/workspace/GURPSChase/build/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/clay/workspace/GURPSChase/build/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/clay/workspace/GURPSChase/build/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="GURPSChase-test">
+         <Option output="/home/clay/workspace/GURPSChase/build/GURPSChase-test" prefix_auto="0" extension_auto="0" />
+         <Option working_dir="" />
+         <Option object_output="./" />
+         <Option type="1" />
+         <Option compiler="gcc" />
+         <Compiler>
+            <Add option="-DQT_WIDGETS_LIB" />
+            <Add option="-DQT_GUI_LIB" />
+            <Add option="-DQT_CORE_LIB" />
+            <Add option="-DQT_NO_DEBUG" />
+            <Add directory="/home/clay/workspace/GURPSChase" />
+            <Add directory="/home/clay/workspace/GURPSChase/build" />
+            <Add directory="/home/clay/workspace/GURPSChase/gtest/include" />
+            <Add directory="/usr/include" />
+            <Add directory="/usr/include/c++/4.9" />
+            <Add directory="/usr/include/c++/4.9/backward" />
+            <Add directory="/usr/include/x86_64-linux-gnu" />
+            <Add directory="/usr/include/x86_64-linux-gnu/c++/4.9" />
+            <Add directory="/usr/include/x86_64-linux-gnu/qt5" />
+            <Add directory="/usr/include/x86_64-linux-gnu/qt5/QtCore" />
+            <Add directory="/usr/include/x86_64-linux-gnu/qt5/QtGui" />
+            <Add directory="/usr/include/x86_64-linux-gnu/qt5/QtWidgets" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.9/include" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.9/include-fixed" />
+            <Add directory="/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64" />
+            <Add directory="/usr/local/include" />
+         </Compiler>
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/clay/workspace/GURPSChase/build/Makefile&quot;  VERBOSE=1 GURPSChase-test" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/clay/workspace/GURPSChase/build/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/clay/workspace/GURPSChase/build/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/clay/workspace/GURPSChase/build/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="GURPSChase-test/fast">
+         <Option output="/home/clay/workspace/GURPSChase/build/GURPSChase-test" prefix_auto="0" extension_auto="0" />
+         <Option working_dir="" />
+         <Option object_output="./" />
+         <Option type="1" />
+         <Option compiler="gcc" />
+         <Compiler>
+            <Add option="-DQT_WIDGETS_LIB" />
+            <Add option="-DQT_GUI_LIB" />
+            <Add option="-DQT_CORE_LIB" />
+            <Add option="-DQT_NO_DEBUG" />
+            <Add directory="/home/clay/workspace/GURPSChase" />
+            <Add directory="/home/clay/workspace/GURPSChase/build" />
+            <Add directory="/home/clay/workspace/GURPSChase/gtest/include" />
+            <Add directory="/usr/include" />
+            <Add directory="/usr/include/c++/4.9" />
+            <Add directory="/usr/include/c++/4.9/backward" />
+            <Add directory="/usr/include/x86_64-linux-gnu" />
+            <Add directory="/usr/include/x86_64-linux-gnu/c++/4.9" />
+            <Add directory="/usr/include/x86_64-linux-gnu/qt5" />
+            <Add directory="/usr/include/x86_64-linux-gnu/qt5/QtCore" />
+            <Add directory="/usr/include/x86_64-linux-gnu/qt5/QtGui" />
+            <Add directory="/usr/include/x86_64-linux-gnu/qt5/QtWidgets" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.9/include" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.9/include-fixed" />
+            <Add directory="/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64" />
+            <Add directory="/usr/local/include" />
+         </Compiler>
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/clay/workspace/GURPSChase/build/Makefile&quot;  VERBOSE=1 GURPSChase-test/fast" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/clay/workspace/GURPSChase/build/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/clay/workspace/GURPSChase/build/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/clay/workspace/GURPSChase/build/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="edit_cache">
+         <Option working_dir="/home/clay/workspace/GURPSChase/build" />
+         <Option type="4" />
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/clay/workspace/GURPSChase/build/Makefile&quot;  VERBOSE=1 edit_cache" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/clay/workspace/GURPSChase/build/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/clay/workspace/GURPSChase/build/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/clay/workspace/GURPSChase/build/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="GURPSChase">
+         <Option output="/home/clay/workspace/GURPSChase/build/GURPSChase" prefix_auto="0" extension_auto="0" />
+         <Option working_dir="" />
+         <Option object_output="./" />
+         <Option type="1" />
+         <Option compiler="gcc" />
+         <Compiler>
+            <Add option="-DQT_WIDGETS_LIB" />
+            <Add option="-DQT_GUI_LIB" />
+            <Add option="-DQT_CORE_LIB" />
+            <Add option="-DQT_NO_DEBUG" />
+            <Add directory="/home/clay/workspace/GURPSChase" />
+            <Add directory="/home/clay/workspace/GURPSChase/build" />
+            <Add directory="/home/clay/workspace/GURPSChase/gtest/include" />
+            <Add directory="/usr/include" />
+            <Add directory="/usr/include/c++/4.9" />
+            <Add directory="/usr/include/c++/4.9/backward" />
+            <Add directory="/usr/include/x86_64-linux-gnu" />
+            <Add directory="/usr/include/x86_64-linux-gnu/c++/4.9" />
+            <Add directory="/usr/include/x86_64-linux-gnu/qt5" />
+            <Add directory="/usr/include/x86_64-linux-gnu/qt5/QtCore" />
+            <Add directory="/usr/include/x86_64-linux-gnu/qt5/QtGui" />
+            <Add directory="/usr/include/x86_64-linux-gnu/qt5/QtWidgets" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.9/include" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.9/include-fixed" />
+            <Add directory="/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64" />
+            <Add directory="/usr/local/include" />
+         </Compiler>
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/clay/workspace/GURPSChase/build/Makefile&quot;  VERBOSE=1 GURPSChase" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/clay/workspace/GURPSChase/build/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/clay/workspace/GURPSChase/build/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/clay/workspace/GURPSChase/build/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="GURPSChase/fast">
+         <Option output="/home/clay/workspace/GURPSChase/build/GURPSChase" prefix_auto="0" extension_auto="0" />
+         <Option working_dir="" />
+         <Option object_output="./" />
+         <Option type="1" />
+         <Option compiler="gcc" />
+         <Compiler>
+            <Add option="-DQT_WIDGETS_LIB" />
+            <Add option="-DQT_GUI_LIB" />
+            <Add option="-DQT_CORE_LIB" />
+            <Add option="-DQT_NO_DEBUG" />
+            <Add directory="/home/clay/workspace/GURPSChase" />
+            <Add directory="/home/clay/workspace/GURPSChase/build" />
+            <Add directory="/home/clay/workspace/GURPSChase/gtest/include" />
+            <Add directory="/usr/include" />
+            <Add directory="/usr/include/c++/4.9" />
+            <Add directory="/usr/include/c++/4.9/backward" />
+            <Add directory="/usr/include/x86_64-linux-gnu" />
+            <Add directory="/usr/include/x86_64-linux-gnu/c++/4.9" />
+            <Add directory="/usr/include/x86_64-linux-gnu/qt5" />
+            <Add directory="/usr/include/x86_64-linux-gnu/qt5/QtCore" />
+            <Add directory="/usr/include/x86_64-linux-gnu/qt5/QtGui" />
+            <Add directory="/usr/include/x86_64-linux-gnu/qt5/QtWidgets" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.9/include" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.9/include-fixed" />
+            <Add directory="/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64" />
+            <Add directory="/usr/local/include" />
+         </Compiler>
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/clay/workspace/GURPSChase/build/Makefile&quot;  VERBOSE=1 GURPSChase/fast" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/clay/workspace/GURPSChase/build/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/clay/workspace/GURPSChase/build/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/clay/workspace/GURPSChase/build/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="gtest_main">
+         <Option output="/home/clay/workspace/GURPSChase/build/gtest/libgtest_main.a" prefix_auto="0" extension_auto="0" />
+         <Option working_dir="/home/clay/workspace/GURPSChase/build/gtest" />
+         <Option object_output="./" />
+         <Option type="2" />
+         <Option compiler="gcc" />
+         <Compiler>
+            <Add directory="/home/clay/workspace/GURPSChase/gtest" />
+            <Add directory="/home/clay/workspace/GURPSChase/gtest/include" />
+            <Add directory="/usr/include" />
+            <Add directory="/usr/include/c++/4.9" />
+            <Add directory="/usr/include/c++/4.9/backward" />
+            <Add directory="/usr/include/x86_64-linux-gnu" />
+            <Add directory="/usr/include/x86_64-linux-gnu/c++/4.9" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.9/include" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.9/include-fixed" />
+            <Add directory="/usr/local/include" />
+         </Compiler>
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/clay/workspace/GURPSChase/build/gtest/Makefile&quot;  VERBOSE=1 gtest_main" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/clay/workspace/GURPSChase/build/gtest/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/clay/workspace/GURPSChase/build/gtest/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/clay/workspace/GURPSChase/build/gtest/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="gtest_main/fast">
+         <Option output="/home/clay/workspace/GURPSChase/build/gtest/libgtest_main.a" prefix_auto="0" extension_auto="0" />
+         <Option working_dir="/home/clay/workspace/GURPSChase/build/gtest" />
+         <Option object_output="./" />
+         <Option type="2" />
+         <Option compiler="gcc" />
+         <Compiler>
+            <Add directory="/home/clay/workspace/GURPSChase/gtest" />
+            <Add directory="/home/clay/workspace/GURPSChase/gtest/include" />
+            <Add directory="/usr/include" />
+            <Add directory="/usr/include/c++/4.9" />
+            <Add directory="/usr/include/c++/4.9/backward" />
+            <Add directory="/usr/include/x86_64-linux-gnu" />
+            <Add directory="/usr/include/x86_64-linux-gnu/c++/4.9" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.9/include" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.9/include-fixed" />
+            <Add directory="/usr/local/include" />
+         </Compiler>
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/clay/workspace/GURPSChase/build/gtest/Makefile&quot;  VERBOSE=1 gtest_main/fast" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/clay/workspace/GURPSChase/build/gtest/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/clay/workspace/GURPSChase/build/gtest/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/clay/workspace/GURPSChase/build/gtest/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="gtest">
+         <Option output="/home/clay/workspace/GURPSChase/build/gtest/libgtest.a" prefix_auto="0" extension_auto="0" />
+         <Option working_dir="/home/clay/workspace/GURPSChase/build/gtest" />
+         <Option object_output="./" />
+         <Option type="2" />
+         <Option compiler="gcc" />
+         <Compiler>
+            <Add directory="/home/clay/workspace/GURPSChase/gtest" />
+            <Add directory="/home/clay/workspace/GURPSChase/gtest/include" />
+            <Add directory="/usr/include" />
+            <Add directory="/usr/include/c++/4.9" />
+            <Add directory="/usr/include/c++/4.9/backward" />
+            <Add directory="/usr/include/x86_64-linux-gnu" />
+            <Add directory="/usr/include/x86_64-linux-gnu/c++/4.9" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.9/include" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.9/include-fixed" />
+            <Add directory="/usr/local/include" />
+         </Compiler>
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/clay/workspace/GURPSChase/build/gtest/Makefile&quot;  VERBOSE=1 gtest" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/clay/workspace/GURPSChase/build/gtest/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/clay/workspace/GURPSChase/build/gtest/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/clay/workspace/GURPSChase/build/gtest/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="gtest/fast">
+         <Option output="/home/clay/workspace/GURPSChase/build/gtest/libgtest.a" prefix_auto="0" extension_auto="0" />
+         <Option working_dir="/home/clay/workspace/GURPSChase/build/gtest" />
+         <Option object_output="./" />
+         <Option type="2" />
+         <Option compiler="gcc" />
+         <Compiler>
+            <Add directory="/home/clay/workspace/GURPSChase/gtest" />
+            <Add directory="/home/clay/workspace/GURPSChase/gtest/include" />
+            <Add directory="/usr/include" />
+            <Add directory="/usr/include/c++/4.9" />
+            <Add directory="/usr/include/c++/4.9/backward" />
+            <Add directory="/usr/include/x86_64-linux-gnu" />
+            <Add directory="/usr/include/x86_64-linux-gnu/c++/4.9" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.9/include" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.9/include-fixed" />
+            <Add directory="/usr/local/include" />
+         </Compiler>
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/clay/workspace/GURPSChase/build/gtest/Makefile&quot;  VERBOSE=1 gtest/fast" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/clay/workspace/GURPSChase/build/gtest/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/clay/workspace/GURPSChase/build/gtest/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/clay/workspace/GURPSChase/build/gtest/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      </Build>
+      <Unit filename="/home/clay/workspace/GURPSChase/gtest/src/gtest-all.cc">
+         <Option target="gtest"/>
+      </Unit>
+      <Unit filename="/home/clay/workspace/GURPSChase/gtest/src/gtest_main.cc">
+         <Option target="gtest_main"/>
+      </Unit>
+      <Unit filename="/home/clay/workspace/GURPSChase/jsoncpp.cpp">
+         <Option target="GURPSChase-test"/>
+         <Option target="GURPSChase"/>
+      </Unit>
+      <Unit filename="/home/clay/workspace/GURPSChase/main.cpp">
+         <Option target="GURPSChase"/>
+      </Unit>
+      <Unit filename="/home/clay/workspace/GURPSChase/serializable.h">
+         <Option target="GURPSChase-test"/>
+         <Option target="GURPSChase"/>
+      </Unit>
+      <Unit filename="/home/clay/workspace/GURPSChase/test_vehicle.cpp">
+         <Option target="GURPSChase-test"/>
+      </Unit>
+      <Unit filename="/home/clay/workspace/GURPSChase/vehicle.cpp">
+         <Option target="GURPSChase-test"/>
+         <Option target="GURPSChase"/>
+      </Unit>
+      <Unit filename="/home/clay/workspace/GURPSChase/vehicle.h">
+         <Option target="GURPSChase-test"/>
+         <Option target="GURPSChase"/>
+      </Unit>
+      <Unit filename="/home/clay/workspace/GURPSChase/CMakeLists.txt">
+          <Option virtualFolder="CMake Files\" />
+      </Unit>
+      <Unit filename="/home/clay/workspace/GURPSChase/config.h.in">
+          <Option virtualFolder="CMake Files\" />
+      </Unit>
+      <Unit filename="/home/clay/workspace/GURPSChase/../../../../usr/lib/x86_64-linux-gnu/cmake/Qt5Widgets/Qt5WidgetsConfigVersion.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5Widgets\" />
+      </Unit>
+      <Unit filename="/home/clay/workspace/GURPSChase/../../../../usr/lib/x86_64-linux-gnu/cmake/Qt5Widgets/Qt5WidgetsConfig.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5Widgets\" />
+      </Unit>
+      <Unit filename="/home/clay/workspace/GURPSChase/../../../../usr/lib/x86_64-linux-gnu/cmake/Qt5Widgets/Qt5WidgetsConfigExtras.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5Widgets\" />
+      </Unit>
+      <Unit filename="/home/clay/workspace/GURPSChase/../../../../usr/lib/x86_64-linux-gnu/cmake/Qt5Widgets/Qt5WidgetsMacros.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5Widgets\" />
+      </Unit>
+      <Unit filename="/home/clay/workspace/GURPSChase/../../../../usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5GuiConfigVersion.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5Gui\" />
+      </Unit>
+      <Unit filename="/home/clay/workspace/GURPSChase/../../../../usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5GuiConfig.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5Gui\" />
+      </Unit>
+      <Unit filename="/home/clay/workspace/GURPSChase/../../../../usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_AppMenuPlatformThemePlugin.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5Gui\" />
+      </Unit>
+      <Unit filename="/home/clay/workspace/GURPSChase/../../../../usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5GuiConfigExtras.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5Gui\" />
+      </Unit>
+      <Unit filename="/home/clay/workspace/GURPSChase/../../../../usr/lib/x86_64-linux-gnu/cmake/Qt5Core/Qt5CoreConfigVersion.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5Core\" />
+      </Unit>
+      <Unit filename="/home/clay/workspace/GURPSChase/../../../../usr/lib/x86_64-linux-gnu/cmake/Qt5Core/Qt5CoreConfig.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5Core\" />
+      </Unit>
+      <Unit filename="/home/clay/workspace/GURPSChase/../../../../usr/lib/x86_64-linux-gnu/cmake/Qt5Core/Qt5CoreConfigExtras.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5Core\" />
+      </Unit>
+      <Unit filename="/home/clay/workspace/GURPSChase/../../../../usr/lib/x86_64-linux-gnu/cmake/Qt5Core/Qt5CoreConfigExtrasMkspecDir.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5Core\" />
+      </Unit>
+      <Unit filename="/home/clay/workspace/GURPSChase/../../../../usr/lib/x86_64-linux-gnu/cmake/Qt5Core/Qt5CoreMacros.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5Core\" />
+      </Unit>
+      <Unit filename="/home/clay/workspace/GURPSChase/../../../../usr/lib/x86_64-linux-gnu/cmake/Qt5Core/Qt5CoreConfigVersion.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5Core\" />
+      </Unit>
+      <Unit filename="/home/clay/workspace/GURPSChase/../../../../usr/lib/x86_64-linux-gnu/cmake/Qt5Core/Qt5CoreConfig.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5Core\" />
+      </Unit>
+      <Unit filename="/home/clay/workspace/GURPSChase/gtest/CMakeLists.txt">
+          <Option virtualFolder="CMake Files\gtest\" />
+      </Unit>
+      <Unit filename="/home/clay/workspace/GURPSChase/gtest/CMakeLists.txt">
+          <Option virtualFolder="CMake Files\gtest\" />
+      </Unit>
+      <Unit filename="/home/clay/workspace/GURPSChase/gtest/cmake/internal_utils.cmake">
+          <Option virtualFolder="CMake Files\gtest\cmake\" />
+      </Unit>
+      <Unit filename="/home/clay/workspace/GURPSChase/gtest/cmake/internal_utils.cmake">
+          <Option virtualFolder="CMake Files\gtest\cmake\" />
+      </Unit>
+   </Project>
+</CodeBlocks_project_file>

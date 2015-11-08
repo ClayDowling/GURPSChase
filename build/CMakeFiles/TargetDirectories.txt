@@ -1,0 +1,6 @@
+/home/clay/workspace/GURPSChase/build/CMakeFiles/GURPSChase_automoc.dir
+/home/clay/workspace/GURPSChase/build/CMakeFiles/GURPSChase-test_automoc.dir
+/home/clay/workspace/GURPSChase/build/CMakeFiles/GURPSChase.dir
+/home/clay/workspace/GURPSChase/build/CMakeFiles/GURPSChase-test.dir
+/home/clay/workspace/GURPSChase/build/gtest/CMakeFiles/gtest_main.dir
+/home/clay/workspace/GURPSChase/build/gtest/CMakeFiles/gtest.dir
