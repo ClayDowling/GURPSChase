@@ -1,4 +1,6 @@
-#include <sstream>
+#include <QJsonDocument>
+#include <QJsonArray>
+
 #include <gtest/gtest.h>
 #include "driver.h"
 
@@ -9,10 +11,7 @@ public:
 
     virtual void SetUp()
     {
-        istringstream in("{\"name\": \"Speed Racer\", \"DX\": 12, \"skills\": [{\"name\": \"Driving\", \"level\": 12}, {\"name\": \"Flying\", \"level\": 14}]}");
-        Json::Value root;
-
-        in >> root;
+        QJsonObject root = QJsonDocument::fromJson("{\"name\": \"Speed Racer\", \"DX\": 12, \"skills\": [{\"name\": \"Driving\", \"level\": 12}, {\"name\": \"Flying\", \"level\": 14}]}").object();
         driver.fromJson(root);
     }
 };
@@ -36,8 +35,8 @@ TEST_F(BasicDriverTest, CanReadName)
 
 TEST_F(BasicDriverTest, CanWriteName)
 {
-    Json::Value output = driver.toJson();
-    ASSERT_EQ("Speed Racer", output["name"].asString());
+    QJsonObject output = driver.toJson();
+    ASSERT_EQ("Speed Racer", output["name"].toString());
 }
 
 TEST_F(BasicDriverTest, skillCount_whenTwoSkillsPresent_returnsTwo)
@@ -75,17 +74,41 @@ TEST_F(BasicDriverTest, getSkillLevel_whenSkillNameIsFlying_returnsFourteen)
     ASSERT_EQ(14, driver.getSkillLevel("Flying"));
 }
 
+TEST_F(BasicDriverTest, setSkill_whenBoatingAndTwoExistingSkills_getSkillCountReturns3)
+{
+    EXPECT_EQ(2, driver.skillCount());
+    Skill newskill;
+    newskill.setName("Boating");
+    newskill.setLevel(8);
+    driver.setSkill(newskill);
+
+    ASSERT_EQ(3, driver.skillCount());
+}
+
+TEST_F(BasicDriverTest, setSkill_whenDrivingOfSevenAndExistingDrivingIsTwelve_getSkillLevelDrivingReturnsSeven)
+{
+    EXPECT_EQ(2, driver.skillCount());
+    EXPECT_EQ(12, driver.getSkillLevel("Driving"));
+    Skill newskill;
+    newskill.setName("Driving");
+    newskill.setLevel(7);
+    driver.setSkill(newskill);
+
+    ASSERT_EQ(2, driver.skillCount());
+    ASSERT_EQ(7, driver.getSkillLevel("Driving"));
+}
+
 TEST_F(BasicDriverTest, CanWriteSkills)
 {
-    Json::Value output = driver.toJson();
-    Json::Value skills = output["skills"];
+    QJsonObject output = driver.toJson();
+    QJsonArray skills = output["skills"].toArray();
     ASSERT_EQ(2, skills.size());
 
-    Json::Value skill1 = skills[0];
-    Json::Value skill2 = skills[1];
+    QJsonObject skill1 = skills[0].toObject();
+    QJsonObject skill2 = skills[1].toObject();
 
-    ASSERT_EQ("Driving", skill1["name"].asString());
-    ASSERT_EQ("Flying", skill2["name"].asString());
+    ASSERT_EQ("Driving", skill1["name"].toString());
+    ASSERT_EQ("Flying", skill2["name"].toString());
 
 }
 
@@ -108,6 +131,6 @@ TEST_F(BasicDriverTest, CanReadDX)
 
 TEST_F(BasicDriverTest, CanWriteDX)
 {
-    Json::Value output = driver.toJson();
-    ASSERT_EQ(12, output["DX"].asInt());
+    QJsonObject output = driver.toJson();
+    ASSERT_EQ(12, output["DX"].toInt());
 }

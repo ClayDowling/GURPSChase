@@ -1,46 +1,45 @@
+#include <QJsonArray>
 #include "driver.h"
-
-#include <iostream>
-
-using namespace std;
 
 Driver::Driver() : name(""), dx(0)
 {
 
 }
 
-string Driver::getName()
+QString Driver::getName()
 {
     return name;
 }
 
-void Driver::setName(string name)
+void Driver::setName(QString name)
 {
     this->name = name;
 }
 
-void Driver::fromJson(Json::Value &parent)
+void Driver::fromJson(const QJsonObject &parent)
 {
-    name = parent["name"].asString();
-    dx = parent["DX"].asInt();
-    Json::Value arrskill = parent["skills"];
+    name = parent["name"].toString();
+    dx = parent["DX"].toInt();
+    QJsonArray arrskill = parent["skills"].toArray();
     for(int i=0; i < arrskill.size(); ++i) {
         Skill newSkill;
-        newSkill.fromJson(arrskill[i]);
+        newSkill.fromJson(arrskill[i].toObject());
         skills.push_back(newSkill);
     }
 
 }
 
-Json::Value& Driver::toJson()
+QJsonObject& Driver::toJson()
 {
-    Json::Value *root = new Json::Value();
+    QJsonObject *root = new QJsonObject();
     (*root)["name"] = name;
     (*root)["DX"] = dx;
 
+    QJsonArray skillsArray;
     for(auto skill : skills) {
-        (*root)["skills"].append(skill.toJson());
+        skillsArray.append(skill.toJson());
     }
+    (*root)["skills"] = skillsArray;
     return *root;
 }
 
@@ -58,7 +57,7 @@ Skill& Driver::getSkill(int index)
     }
 }
 
-int Driver::getSkillLevel(string name)
+int Driver::getSkillLevel(QString name)
 {
     for(Skill sp : skills) {
         if (sp.getName() == name) {
@@ -66,6 +65,18 @@ int Driver::getSkillLevel(string name)
         }
     }
     return -1;
+}
+
+void Driver::setSkill(Skill &skill)
+{
+    for(Skill& sp : skills) {
+        if (sp.getName() == skill.getName()) {
+            sp.setLevel(skill.getLevel());
+            return;
+        }
+    }
+
+    skills.push_back(skill);
 }
 
 int Driver::getDX()

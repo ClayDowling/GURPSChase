@@ -1,5 +1,5 @@
+#include <QJsonDocument>
 #include <gtest/gtest.h>
-#include <sstream>
 
 #include "vehicle.h"
 
@@ -10,11 +10,7 @@ public:
     Vehicle vehicle;
 
     void SetUp() {
-        istringstream in("{\"maxSpeed\": 35, \"maneuver\": 5, \"name\": \"Test Vehicle\", \"skill\": \"Driving\" }");
-
-        Json::Value root;
-        in >> root;
-
+        QJsonObject root = QJsonDocument::fromJson("{\"maxSpeed\": 35, \"maneuver\": 5, \"name\": \"Test Vehicle\", \"skill\": \"Driving\" }").object();
         vehicle.fromJson(root);
     }
 
@@ -27,9 +23,9 @@ TEST_F(VehicleBasicSetup, CanReadMaxSpeed)
 
 TEST_F(VehicleBasicSetup, CanWriteMaxSpeed)
 {
-    Json::Value output = vehicle.toJson();
+    QJsonObject output = vehicle.toJson();
 
-    ASSERT_EQ(35, output["maxSpeed"].asInt());
+    ASSERT_EQ(35, output["maxSpeed"].toInt());
 }
 
 TEST_F(VehicleBasicSetup, CanReadManeuver)
@@ -39,8 +35,8 @@ TEST_F(VehicleBasicSetup, CanReadManeuver)
 
 TEST_F(VehicleBasicSetup, CanWriteManeuver)
 {
-    Json::Value output = vehicle.toJson();
-    ASSERT_EQ(5, output["maneuver"].asInt());
+    QJsonObject output = vehicle.toJson();
+    ASSERT_EQ(5, output["maneuver"].toInt());
 }
 
 TEST_F(VehicleBasicSetup, CanReadName)
@@ -50,8 +46,8 @@ TEST_F(VehicleBasicSetup, CanReadName)
 
 TEST_F(VehicleBasicSetup, CanWriteName)
 {
-    Json::Value output = vehicle.toJson();
-    ASSERT_EQ("Test Vehicle", output["name"].asString());
+    QJsonObject output = vehicle.toJson();
+    ASSERT_EQ("Test Vehicle", output["name"].toString());
 }
 
 TEST_F(VehicleBasicSetup, nameDefaultsToBlank)
@@ -109,6 +105,6 @@ TEST_F(VehicleBasicSetup, CanReadSkill)
 
 TEST_F(VehicleBasicSetup, CanWriteSkill)
 {
-    Json::Value output = vehicle.toJson();
-    ASSERT_EQ("Driving", output["skill"].asString());
+    QJsonObject output = vehicle.toJson();
+    ASSERT_EQ("Driving", output["skill"].toString());
 }

@@ -1,7 +1,7 @@
 #ifndef VEHICLE_H
 #define VEHICLE_H
 
-#include <string>
+#include <QString>
 #include "serializable.h"
 
 using namespace std;
@@ -11,8 +11,8 @@ class Vehicle : public Serializable
 public:
     Vehicle();
 
-    virtual Json::Value& toJson();
-    virtual void fromJson(Json::Value &parent);
+    virtual QJsonObject& toJson();
+    virtual void fromJson(const QJsonObject &parent);
 
     virtual int getMaxSpeed();
     virtual void setMaxSpeed(int);
@@ -20,17 +20,17 @@ public:
     virtual int getManeuver();
     virtual void setManeuver(int);
 
-    virtual string getName();
-    virtual void setName(string name);
+    virtual QString getName();
+    virtual void setName(QString name);
 
-    virtual string getSkill();
-    virtual void setSkill(string skill);
+    virtual QString getSkill();
+    virtual void setSkill(QString skill);
 
 private:
     int maxSpeed;
     int maneuver;
-    string name;
-    string skill;
+    QString name;
+    QString skill;
 };
 
 #endif // VEHICLE_H

@@ -1,4 +1,3 @@
-#include <iostream>
 #include "vehicle.h"
 
 Vehicle::Vehicle() : maneuver(0), maxSpeed(0), name(""), skill("")
@@ -26,9 +25,9 @@ void Vehicle::setManeuver(int newManeuver)
     maneuver = newManeuver;
 }
 
-Json::Value& Vehicle::toJson()
+QJsonObject& Vehicle::toJson()
 {
-    Json::Value *root = new Json::Value;
+    QJsonObject *root = new QJsonObject;
     (*root)["name"] = name;
     (*root)["maxSpeed"] = maxSpeed;
     (*root)["maneuver"] = maneuver;
@@ -37,30 +36,30 @@ Json::Value& Vehicle::toJson()
     return *root;
 }
 
-void Vehicle::fromJson(Json::Value &parent)
+void Vehicle::fromJson(const QJsonObject &parent)
 {
-    maxSpeed = parent["maxSpeed"].asInt();
-    maneuver = parent["maneuver"].asInt();
-    name = parent["name"].asString();
-    skill = parent["skill"].asString();
+    maxSpeed = parent["maxSpeed"].toInt();
+    maneuver = parent["maneuver"].toInt();
+    name = parent["name"].toString();
+    skill = parent["skill"].toString();
 }
 
-string Vehicle::getName()
+QString Vehicle::getName()
 {
     return name;
 }
 
-void Vehicle::setName(string name)
+void Vehicle::setName(QString name)
 {
     this->name = name;
 }
 
-string Vehicle::getSkill()
+QString Vehicle::getSkill()
 {
     return skill;
 }
 
-void Vehicle::setSkill(string skill)
+void Vehicle::setSkill(QString skill)
 {
     this->skill = skill;
 }

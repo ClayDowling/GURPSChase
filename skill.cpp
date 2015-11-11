@@ -5,26 +5,26 @@ Skill::Skill() : name(""), level(0)
 
 }
 
-void Skill::fromJson(Json::Value &parent)
+void Skill::fromJson(const QJsonObject &parent)
 {
-    name = parent["name"].asString();
-    level = parent["level"].asInt();
+    name = parent["name"].toString();
+    level = parent["level"].toInt();
 }
 
-Json::Value& Skill::toJson()
+QJsonObject &Skill::toJson()
 {
-    Json::Value *root = new Json::Value();
+    QJsonObject *root = new QJsonObject();
     (*root)["name"] = name;
     (*root)["level"] = level;
     return *root;
 }
 
-string Skill::getName()
+QString Skill::getName()
 {
     return name;
 }
 
-void Skill::setName(string name)
+void Skill::setName(QString name)
 {
     this->name = name;
 }

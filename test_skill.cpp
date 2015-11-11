@@ -1,4 +1,4 @@
-#include <sstream>
+#include <QJsonDocument>
 #include <gtest/gtest.h>
 #include "skill.h"
 
@@ -9,10 +9,7 @@ public:
 
     virtual void SetUp()
     {
-        istringstream in("{\"name\": \"Driving\", \"level\": 12}");
-        Json::Value root;
-
-        in >> root;
+        QJsonObject root = QJsonDocument::fromJson("{\"name\": \"Driving\", \"level\": 12}").object();
         skill.fromJson(root);
     }
 };
@@ -30,8 +27,8 @@ TEST_F(BasicSkillTest, CanReadName)
 
 TEST_F(BasicSkillTest, CanWriteName)
 {
-    Json::Value output = skill.toJson();
-    ASSERT_EQ("Driving", output["name"].asString());
+    QJsonObject output = skill.toJson();
+    ASSERT_EQ("Driving", output["name"].toString());
 }
 
 TEST_F(BasicSkillTest, CanSetName)
@@ -53,8 +50,8 @@ TEST_F(BasicSkillTest, CanReadLevel)
 
 TEST_F(BasicSkillTest, CanWriteLevel)
 {
-    Json::Value output = skill.toJson();
-    ASSERT_EQ(12, output["level"].asInt());
+    QJsonObject output = skill.toJson();
+    ASSERT_EQ(12, output["level"].toInt());
 }
 
 TEST_F(BasicSkillTest, CanSetLevel)
