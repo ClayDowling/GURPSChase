@@ -1,7 +1,7 @@
 #include <QJsonArray>
 #include "driver.h"
 
-Driver::Driver() : name(""), dx(0)
+Driver::Driver() : name(""), dx(0), speed(0.0)
 {
 
 }
@@ -20,6 +20,7 @@ void Driver::fromJson(const QJsonObject &parent)
 {
     name = parent["name"].toString();
     dx = parent["DX"].toInt();
+    speed = parent["speed"].toDouble();
     QJsonArray arrskill = parent["skills"].toArray();
     for(int i=0; i < arrskill.size(); ++i) {
         Skill newSkill;
@@ -34,6 +35,7 @@ QJsonObject& Driver::toJson()
     QJsonObject *root = new QJsonObject();
     (*root)["name"] = name;
     (*root)["DX"] = dx;
+    (*root)["speed"] = speed;
 
     QJsonArray skillsArray;
     for(auto skill : skills) {
@@ -87,4 +89,14 @@ int Driver::getDX()
 void Driver::setDX(int dx)
 {
     this->dx = dx;
+}
+
+double Driver::getSpeed()
+{
+    return speed;
+}
+
+void Driver::setSpeed(double speed)
+{
+    this->speed = speed;
 }

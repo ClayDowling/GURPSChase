@@ -22,6 +22,9 @@ public:
     virtual int getDX();
     virtual void setDX(int dx);
 
+    virtual double getSpeed();
+    virtual void setSpeed(double speed);
+
     virtual int skillCount();
     virtual Skill& getSkill(int index);
     virtual int getSkillLevel(QString name);
@@ -30,6 +33,7 @@ public:
 private:
     QString name;
     int dx;
+    double speed;
     QVector<Skill> skills;
 };
 

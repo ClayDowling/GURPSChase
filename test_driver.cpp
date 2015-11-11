@@ -11,7 +11,7 @@ public:
 
     virtual void SetUp()
     {
-        QJsonObject root = QJsonDocument::fromJson("{\"name\": \"Speed Racer\", \"DX\": 12, \"skills\": [{\"name\": \"Driving\", \"level\": 12}, {\"name\": \"Flying\", \"level\": 14}]}").object();
+        QJsonObject root = QJsonDocument::fromJson("{\"name\": \"Speed Racer\", \"DX\": 12, \"speed\": 5.5, \"skills\": [{\"name\": \"Driving\", \"level\": 12}, {\"name\": \"Flying\", \"level\": 14}]}").object();
         driver.fromJson(root);
     }
 };
@@ -133,4 +133,27 @@ TEST_F(BasicDriverTest, CanWriteDX)
 {
     QJsonObject output = driver.toJson();
     ASSERT_EQ(12, output["DX"].toInt());
+}
+
+TEST_F(BasicDriverTest, speedDefaultsToZero)
+{
+    Driver localDriver;
+    ASSERT_EQ(0, localDriver.getSpeed());
+}
+
+TEST_F(BasicDriverTest, setSpeed_whenPassedSixPointTwoFive_getSpeedReturnsSixPointTwoFive)
+{
+    driver.setSpeed(6.25);
+    ASSERT_EQ(6.25, driver.getSpeed());
+}
+
+TEST_F(BasicDriverTest, CanReadSpeed)
+{
+    ASSERT_EQ(5.5, driver.getSpeed());
+}
+
+TEST_F(BasicDriverTest, CanWriteSpeed)
+{
+    QJsonObject output = driver.toJson();
+    ASSERT_EQ(5.5, output["speed"].toDouble());
 }
