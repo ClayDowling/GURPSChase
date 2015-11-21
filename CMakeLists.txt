@@ -26,8 +26,6 @@ INCLUDE_DIRECTORIES("${PROJECT_BINARY_DIR}")
 set(APP_SOURCE
         driver.cpp
         driver.h
-        participant.cpp
-        participant.h
         serializable.h
         skill.cpp
         skill.h
@@ -37,7 +35,6 @@ set(APP_SOURCE
 
 set(TEST_SOURCE
     test_driver.cpp
-    test_participant.cpp
     test_skill.cpp
     test_vehicle.cpp
     )
