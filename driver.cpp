@@ -1,7 +1,7 @@
 #include <QJsonArray>
 #include "driver.h"
 
-Driver::Driver() : name(""), dx(0), speed(0.0)
+Driver::Driver() : name(""), dx(0), move(0.0), vehicle(NULL)
 {
 
 }
@@ -11,7 +11,7 @@ QString Driver::getName()
     return name;
 }
 
-void Driver::setName(QString name)
+void Driver::setName(const QString name)
 {
     this->name = name;
 }
@@ -20,7 +20,7 @@ void Driver::fromJson(const QJsonObject &parent)
 {
     name = parent["name"].toString();
     dx = parent["DX"].toInt();
-    speed = parent["speed"].toDouble();
+    move = parent["move"].toInt();
     QJsonArray arrskill = parent["skills"].toArray();
     for(int i=0; i < arrskill.size(); ++i) {
         Skill newSkill;
@@ -35,7 +35,7 @@ QJsonObject& Driver::toJson()
     QJsonObject *root = new QJsonObject();
     (*root)["name"] = name;
     (*root)["DX"] = dx;
-    (*root)["speed"] = speed;
+    (*root)["move"] = move;
 
     QJsonArray skillsArray;
     for(auto skill : skills) {
@@ -91,12 +91,94 @@ void Driver::setDX(int dx)
     this->dx = dx;
 }
 
-double Driver::getSpeed()
+double Driver::getMove()
 {
-    return speed;
+    if (vehicle) {
+        return vehicle->getMaxSpeed();
+    }
+    return move;
 }
 
-void Driver::setSpeed(double speed)
+void Driver::setMove(int move)
 {
-    this->speed = speed;
+    this->move = move;
+}
+
+void Driver::setVehicle(Vehicle *v)
+{
+     vehicle = v;
+}
+
+Vehicle* Driver::getVehicle()
+{
+    return vehicle;
+}
+
+int Driver::getEffectiveSkill()
+{
+    if (NULL == vehicle) {
+        return getEffectiveRunningSkill();
+    }
+    return getEffectiveVehicleSkill();
+}
+
+int Driver::getEffectiveRunningSkill()
+{
+    int level = getSkillLevel("Running");
+    if (-1 == level) {
+        level = dx;
+    }
+    return level;
+}
+
+int Driver::getEffectiveVehicleSkill()
+{
+    int level = getSkillLevel(vehicle->getSkill());
+    if (-1 == level) {
+        level = dx - 5;
+    }
+    return level;
+}
+
+int Driver::getSpeedBonusRunning(int testSpeed)
+{
+    int bonus = 3;
+    if (testSpeed < 5)
+        bonus = 0;
+    else if (testSpeed < 6) {
+        bonus = 2;
+    }
+    return bonus;
+}
+
+int Driver::getSpeedBonusVehicle()
+{
+    int bonus = -1;
+    return bonus;
+}
+
+int Driver::getSpeedBonus()
+{
+    int bonus = 0;
+    int speed = 0;
+    if (NULL == vehicle) {
+        speed = move * 2;
+    } else {
+        speed = vehicle->getMaxSpeed();
+    }
+
+    if (speed >= 10) {
+        bonus = 2;
+    }
+    if (speed >= 12) {
+        bonus = 3;
+    }
+    if (speed >= 20) {
+        bonus = 4;
+    }
+    if (speed >= 30) {
+        bonus = 5;
+    }
+
+    return bonus;
 }

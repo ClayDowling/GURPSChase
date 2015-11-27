@@ -11,7 +11,7 @@ public:
 
     virtual void SetUp()
     {
-        QJsonObject root = QJsonDocument::fromJson("{\"name\": \"Speed Racer\", \"DX\": 12, \"speed\": 5.5, \"skills\": [{\"name\": \"Driving\", \"level\": 12}, {\"name\": \"Flying\", \"level\": 14}]}").object();
+        QJsonObject root = QJsonDocument::fromJson("{\"name\": \"Speed Racer\", \"DX\": 12, \"move\": 5, \"skills\": [{\"name\": \"Driving\", \"level\": 12}, {\"name\": \"Flying\", \"level\": 14}]}").object();
         driver.fromJson(root);
     }
 };
@@ -135,25 +135,25 @@ TEST_F(BasicDriverTest, CanWriteDX)
     ASSERT_EQ(12, output["DX"].toInt());
 }
 
-TEST_F(BasicDriverTest, speedDefaultsToZero)
+TEST_F(BasicDriverTest, moveDefaultsToZero)
 {
     Driver localDriver;
-    ASSERT_EQ(0, localDriver.getSpeed());
+    ASSERT_EQ(0, localDriver.getMove());
 }
 
-TEST_F(BasicDriverTest, setSpeed_whenPassedSixPointTwoFive_getSpeedReturnsSixPointTwoFive)
+TEST_F(BasicDriverTest, setmove_whenPassedSix_getMoveReturnsSix)
 {
-    driver.setSpeed(6.25);
-    ASSERT_EQ(6.25, driver.getSpeed());
+    driver.setMove(6);
+    ASSERT_EQ(6, driver.getMove());
 }
 
-TEST_F(BasicDriverTest, CanReadSpeed)
+TEST_F(BasicDriverTest, CanReadMove)
 {
-    ASSERT_EQ(5.5, driver.getSpeed());
+    ASSERT_EQ(5, driver.getMove());
 }
 
-TEST_F(BasicDriverTest, CanWriteSpeed)
+TEST_F(BasicDriverTest, CanWriteMove)
 {
     QJsonObject output = driver.toJson();
-    ASSERT_EQ(5.5, output["speed"].toDouble());
+    ASSERT_EQ(5, output["move"].toInt());
 }
