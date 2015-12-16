@@ -38,6 +38,7 @@ set(TEST_SOURCE
     test_skill.cpp
     test_vehicle.cpp
     test_vehicle_driver.cpp
+    test_driver_speedbonus.cpp
     )
 
 add_executable(${PROJECT_NAME}

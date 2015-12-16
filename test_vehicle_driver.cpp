@@ -122,3 +122,10 @@ TEST_F(DriverVehicleTest, getSpeedBonus_withVehicleAndSpeedThirty_returnsFive)
     vehicle.setMaxSpeed(30);
     ASSERT_EQ(5, driver.getSpeedBonus());
 }
+
+TEST_F(DriverVehicleTest, getSpeedBonus_withVehicleAndSpeedFourty_returnsSix)
+{
+    driver.setVehicle(&vehicle);
+    vehicle.setMaxSpeed(40);
+    ASSERT_EQ(6, driver.getSpeedBonus());
+}
