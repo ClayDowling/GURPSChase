@@ -19,3 +19,8 @@ int ChaseAction::chaseBonus()
 {
     return 0;
 }
+
+bool ChaseAction::isStaticManeuver()
+{
+    return false;
+}

@@ -12,6 +12,7 @@ public:
     virtual bool isScaledByPenalty();
     virtual void setPenalty(int);
     virtual int chaseBonus();
+    virtual bool isStaticManeuver();
 
 };
 

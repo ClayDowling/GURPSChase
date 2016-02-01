@@ -38,3 +38,7 @@ TEST_F(DefaultActionTest, isScaledByPenaltyIsFalse) {
 TEST_F(DefaultActionTest, chaseBonusIsZero) {
     ASSERT_EQ(0, action.chaseBonus());
 }
+
+TEST_F(DefaultActionTest, isStaticManeuverReturnsFalse) {
+    ASSERT_FALSE(action.isStaticManeuver());
+}
