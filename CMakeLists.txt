@@ -31,6 +31,8 @@ set(APP_SOURCE
         skill.h
         vehicle.cpp
         vehicle.h
+        chaseaction.h
+        chaseaction.cpp
 	)
 
 set(TEST_SOURCE
@@ -39,6 +41,7 @@ set(TEST_SOURCE
     test_vehicle.cpp
     test_vehicle_driver.cpp
     test_driver_speedbonus.cpp
+    test_defaultaction.cpp
     )
 
 add_executable(${PROJECT_NAME}

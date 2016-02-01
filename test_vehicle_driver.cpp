@@ -102,30 +102,3 @@ TEST_F(DriverVehicleTest, getSpeedBonus_withoutVehicleAndSpeedSix_returnsThree)
     ASSERT_EQ(3, driver.getSpeedBonus());
 }
 
-TEST_F(DriverVehicleTest, getSpeedBonus_withVehicleAndSpeedFifteen_returnsThree)
-{
-    driver.setVehicle(&vehicle);
-    vehicle.setMaxSpeed(15);
-    ASSERT_EQ(3, driver.getSpeedBonus());
-}
-
-TEST_F(DriverVehicleTest, getSpeedBonus_withVehicleAndSpeedTwenty_returnsFour)
-{
-    driver.setVehicle(&vehicle);
-    vehicle.setMaxSpeed(20);
-    ASSERT_EQ(4, driver.getSpeedBonus());
-}
-
-TEST_F(DriverVehicleTest, getSpeedBonus_withVehicleAndSpeedThirty_returnsFive)
-{
-    driver.setVehicle(&vehicle);
-    vehicle.setMaxSpeed(30);
-    ASSERT_EQ(5, driver.getSpeedBonus());
-}
-
-TEST_F(DriverVehicleTest, getSpeedBonus_withVehicleAndSpeedFourty_returnsSix)
-{
-    driver.setVehicle(&vehicle);
-    vehicle.setMaxSpeed(40);
-    ASSERT_EQ(6, driver.getSpeedBonus());
-}
