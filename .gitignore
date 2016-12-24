@@ -30,6 +30,8 @@
 build
 build/*
 
+cmake-build-*/
+
 .idea
 
 CMakeLists.txt.user*
