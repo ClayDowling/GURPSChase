@@ -1,0 +1,21 @@
+[
+{
+	"name": "Attack",
+	"pursuer": true,
+	"quarry": true,
+	"wipeout": false,
+	"scaled": false,
+	"penalty": 0,
+	"bonus": 0,
+	"static": true
+},
+{
+	"name": "Disembark/Embark",
+	"pursuer": true,
+	"quarry": true,
+	"scaled": false,
+	"penalty": 0,
+	"bonus": 0,
+	"static": true
+}
+]

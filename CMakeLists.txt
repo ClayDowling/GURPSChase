@@ -33,8 +33,6 @@ set(APP_SOURCE
         vehicle.h
         chaseaction.h
         chaseaction.cpp
-        attackaction.h
-        attackaction.cpp
 	)
 
 set(TEST_SOURCE
