@@ -137,11 +137,6 @@ int Driver::getSpeedBonusVehicle() {
     return bonus;
 }
 
-struct speedbonus {
-    int speed;
-    int bonus;
-};
-
 int Driver::getSpeedBonus() {
     int speed = 0;
     if (NULL == vehicle) {
@@ -150,7 +145,12 @@ int Driver::getSpeedBonus() {
         speed = vehicle->getMaxSpeed();
     }
 
-    speedbonus benefits[] = {
+    struct speedbonus {
+        int speed;
+        int bonus;
+    };
+
+        speedbonus benefits[] = {
             {.speed = 200, .bonus = 10},
             {.speed = 140, .bonus = 9},
             {.speed = 100, .bonus = 8},
