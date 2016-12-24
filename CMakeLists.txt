@@ -32,8 +32,7 @@ set(APP_SOURCE
         vehicle.cpp
         vehicle.h
         chaseaction.h
-        chaseaction.cpp
-	)
+		ActionFactory.cpp ActionFactory.h)
 
 set(TEST_SOURCE
     test_driver.cpp
@@ -41,8 +40,7 @@ set(TEST_SOURCE
     test_vehicle.cpp
     test_vehicle_driver.cpp
     test_driver_speedbonus.cpp
-    test_defaultaction.cpp
-    )
+		ActionFactory.cpp ActionFactory.h test_actionfactory.cpp)
 
 add_executable(${PROJECT_NAME}
 	${APP_SOURCE}

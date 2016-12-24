@@ -1,19 +1,18 @@
 #ifndef CHASEACTION_H
 #define CHASEACTION_H
 
+#include <qstring.h>
 
-class ChaseAction
+struct ChaseAction
 {
-public:
-
-    virtual bool isPursuerAction();
-    virtual bool isQuarryAction();
-    virtual bool canCauseWipeout();
-    virtual bool isScaledByPenalty();
-    virtual void setPenalty(int);
-    virtual int chaseBonus();
-    virtual bool isStaticManeuver();
-
+    QString name;
+    bool pursuerAction;
+    bool quarryAction;
+    bool canCauseWipeout;
+    bool isScaledByPenalty;
+    int penalty;
+    int chaseBonus;
+    bool staticManeuver;
 };
 
 #endif // CHASEACTION_H
