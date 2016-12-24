@@ -2,21 +2,10 @@
 
 #include "chaseaction.h"
 
-class DefaultChaseAction : public ChaseAction {
-public:
-    virtual bool isPursuerAction() {
-        return false;
-    }
-
-    virtual bool isQuarryAction() {
-        return false;
-    }
-};
-
 class DefaultActionTest : public testing::Test
 {
 public:
-    DefaultChaseAction action;
+    ChaseAction action;
 };
 
 TEST_F(DefaultActionTest, isPursuerActionIsFalse) {

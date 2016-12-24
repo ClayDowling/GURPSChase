@@ -42,7 +42,6 @@ set(TEST_SOURCE
     test_vehicle_driver.cpp
     test_driver_speedbonus.cpp
     test_defaultaction.cpp
-    test_attackaction.cpp
     )
 
 add_executable(${PROJECT_NAME}

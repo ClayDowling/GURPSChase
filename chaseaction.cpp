@@ -1,5 +1,13 @@
 #include "chaseaction.h"
 
+bool ChaseAction::isPursuerAction() {
+    return false;
+}
+
+bool ChaseAction::isQuarryAction() {
+    return false;
+}
+
 bool ChaseAction::canCauseWipeout()
 {
     return false;

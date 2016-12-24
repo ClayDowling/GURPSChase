@@ -6,8 +6,8 @@ class ChaseAction
 {
 public:
 
-    virtual bool isPursuerAction() = 0;
-    virtual bool isQuarryAction() = 0;
+    virtual bool isPursuerAction();
+    virtual bool isQuarryAction();
     virtual bool canCauseWipeout();
     virtual bool isScaledByPenalty();
     virtual void setPenalty(int);
